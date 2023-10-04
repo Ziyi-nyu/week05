@@ -1,9 +1,12 @@
-let xPos = 0;
-let yPos = 150;
+let xPos0 = 0;
+let yPos0 = 150;
+let xVel0 = 2;
+let cDiam0 = 40;
 
-let xVel = 2;
-
-let cDiam = 40;
+let xPos1 = 0;
+let yPos1 = 350;
+let xVel1 = 4;
+let cDiam1 = 80;
 
 function setup() {
   createCanvas(800, 600);
@@ -11,17 +14,27 @@ function setup() {
 
 function draw() {
   background("lightblue");
-  fill(220, 10, 100);
+  fill(20, 0,random(100,255));
 
   // draw circle
-  ellipse(xPos, yPos, cDiam, cDiam);
+  ellipse(xPos0, yPos0, cDiam0, cDiam0);
+  ellipse(xPos1, yPos1, cDiam1, cDiam1);
 
   // update pos
-  xPos = xPos + xVel;
+  xPos0 = xPos0+ xVel0;
+  xPos1 = xPos1 + xVel1;
 
   // if reset is needed: pick random diameter and reset x
-  if (xPos > width + cDiam) {
-    cDiam = random(20, 75);
-    xPos = 0 - cDiam;
+  if (xPos0 > width + cDiam0) {
+    cDiam0 = random(20, 75);
+    xPos0 = 0 - cDiam0;
+  }
+  if (xPos1 > width + cDiam1) {
+    cDiam1 = random(50, 125);
+    xPos1 = 0 - cDiam1;
+  }
+  function draw(){
+
+
   }
 }
